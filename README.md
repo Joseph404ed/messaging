@@ -1,12 +1,12 @@
-﻿# agentropic-messaging
+﻿# z-messaging
 
-[![Crates.io](https://img.shields.io/crates/v/agentropic-messaging.svg)](https://crates.io/crates/agentropic-messaging)
-[![Documentation](https://docs.rs/agentropic-messaging/badge.svg)](https://docs.rs/agentropic-messaging)
+[![Crates.io](https://img.shields.io/crates/v/z-messaging.svg)](https://crates.io/crates/z-messaging)
+[![Documentation](https://docs.rs/z-messaging/badge.svg)](https://docs.rs/z-messaging)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE)
 
 **Communication protocols, message routing, and Agent Communication Language (ACL) for multi-agent systems.**
 
-`agentropic-messaging` provides the infrastructure for agents to communicate, coordinate, and collaborate. It implements message passing semantics, routing mechanisms, and standardized communication protocols based on FIPA ACL standards.
+`z-messaging` provides the infrastructure for agents to communicate, coordinate, and collaborate. It implements message passing semantics, routing mechanisms, and standardized communication protocols based on FIPA ACL standards.
 
 ---
 
@@ -51,7 +51,7 @@ All components have:
 
 Messages are the fundamental unit of agent communication:
 ```rust
-use agentropic_messaging::prelude::*;
+use z_messaging::prelude::*;
 
 // Create a message
 let message = Message::new(
@@ -73,7 +73,7 @@ Each message has:
 
 Based on FIPA ACL and speech act theory:
 ```rust
-use agentropic_messaging::Performative;
+use z_messaging::Performative;
 
 // Available performatives:
 Performative::Inform        // Share information
@@ -94,7 +94,7 @@ Performative::Agree         // Commit to action
 
 The router delivers messages between agents:
 ```rust
-use agentropic_messaging::prelude::*;
+use z_messaging::prelude::*;
 
 // Create router
 let mut router = Router::new();
@@ -116,7 +116,7 @@ if router.has_routed(&message_id) {
 
 Each agent has a mailbox for receiving messages:
 ```rust
-use agentropic_messaging::prelude::*;
+use z_messaging::prelude::*;
 
 // Create mailbox
 let mut mailbox = Mailbox::new();
@@ -137,7 +137,7 @@ println!("Messages: {}", mailbox.size());
 
 Synchronous request-response pattern:
 ```rust
-use agentropic_messaging::protocols::prelude::*;
+use z_messaging::protocols::prelude::*;
 
 // Create request-reply protocol
 let protocol = RequestReply::new(requester_id, responder_id);
@@ -204,14 +204,14 @@ Based on Foundation for Intelligent Physical Agents standards:
 Add to your `Cargo.toml`:
 ```toml
 [dependencies]
-agentropic-messaging = "0.1.0"
-agentropic-core = "0.1.0"
+z-messaging = "0.1.0"
+z-core = "0.1.0"
 tokio = { version = "1.0", features = ["full"] }
 ```
 
 ### Basic Message Passing
 ```rust
-use agentropic_messaging::prelude::*;
+use z_messaging::prelude::*;
 
 #[tokio::main]
 async fn main() -> Result<(), MessagingError> {
@@ -246,7 +246,7 @@ async fn main() -> Result<(), MessagingError> {
 
 ### Using the Router
 ```rust
-use agentropic_messaging::prelude::*;
+use z_messaging::prelude::*;
 
 #[tokio::main]
 async fn main() -> Result<(), MessagingError> {
@@ -284,8 +284,8 @@ async fn main() -> Result<(), MessagingError> {
 
 ### Request-Reply Pattern
 ```rust
-use agentropic_messaging::prelude::*;
-use agentropic_messaging::protocols::prelude::*;
+use z_messaging::prelude::*;
+use z_messaging::protocols::prelude::*;
 
 #[tokio::main]
 async fn main() -> Result<(), MessagingError> {
@@ -330,7 +330,7 @@ async fn main() -> Result<(), MessagingError> {
 
 ### Different Performatives
 ```rust
-use agentropic_messaging::prelude::*;
+use z_messaging::prelude::*;
 
 fn main() {
     let sender = AgentId::new();
@@ -457,18 +457,18 @@ cargo run --example request_reply
 
 ## Related Crates
 
-- **[agentropic-core](../agentropic-core)** - Agent primitives and AgentId
-- **[agentropic-cognition](../agentropic-cognition)** - BDI reasoning and planning
-- **[agentropic-patterns](../agentropic-patterns)** - Multi-agent coordination patterns
-- **[agentropic-runtime](../agentropic-runtime)** - Agent execution engine
+- **[z-core](../z-core)** - Agent primitives and AgentId
+- **[z-cognition](../z-cognition)** - BDI reasoning and planning
+- **[z-patterns](../z-patterns)** - Multi-agent coordination patterns
+- **[z-runtime](../z-runtime)** - Agent execution engine
 
 ---
 
 ## Documentation
 
-Full API documentation is available on [docs.rs](https://docs.rs/agentropic-messaging).
+Full API documentation is available on [docs.rs](https://docs.rs/z-messaging).
 
-For guides and tutorials, see the [Agentropic documentation](https://github.com/agentropic/agentropic-docs).
+For guides and tutorials, see the [ZeroicAI documentation](https://github.com/zeroicai/z-docs).
 
 ---
 
@@ -512,4 +512,4 @@ at your option.
 
 ---
 
-*Part of the [Agentropic](https://github.com/agentropic) ecosystem for agent-oriented programming in Rust.*
+*Part of the [ZeroicAI](https://github.com/zeroicai) ecosystem for agent-oriented programming in Rust.*

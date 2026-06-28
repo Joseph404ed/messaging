@@ -8,4 +8,4 @@ pub use crate::performative::Performative;
 pub use crate::router::Router;
 
 // Re-export from core
-pub use agentropic_core::prelude::*;
+pub use z_core::prelude::*;

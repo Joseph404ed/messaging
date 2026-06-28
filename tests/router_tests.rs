@@ -1,4 +1,4 @@
-use agentropic_messaging::prelude::*;
+use z_messaging::prelude::*;
 
 #[tokio::test]
 async fn router_register_and_send() {

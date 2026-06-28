@@ -1,5 +1,5 @@
 use crate::{Message, MessageId, Performative};
-use agentropic_core::AgentId;
+use z_core::AgentId;
 
 /// Message builder
 #[derive(Debug)]

@@ -1,5 +1,5 @@
 use crate::Performative;
-use agentropic_core::AgentId;
+use z_core::AgentId;
 use serde::{Deserialize, Serialize};
 use std::time::SystemTime;
 use uuid::Uuid;
