@@ -1,4 +1,4 @@
-use agentropic_messaging::prelude::*;
+use z_messaging::prelude::*;
 
 #[test]
 fn create_message() {
