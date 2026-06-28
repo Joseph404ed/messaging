@@ -1,5 +1,5 @@
 use crate::{Message, MessagingError};
-use agentropic_core::AgentId;
+use z_core::AgentId;
 use std::collections::HashMap;
 use std::sync::{Arc, RwLock};
 use tokio::sync::mpsc;
