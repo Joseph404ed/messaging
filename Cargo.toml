@@ -1,18 +1,18 @@
 ﻿[package]
-name = "agentropic-messaging"
+name = "z-messaging"
 version = "0.1.0"
 edition = "2021"
-authors = ["Agentropic <agentropic@gmail.com>"]
+authors = ["zeroicai <devzeroicai@gmail.com>"]
 license = "MIT OR Apache-2.0"
 description = "Communication protocols, message routing, and ACL for multi-agent systems"
-repository = "https://github.com/agentropic/agentropic-messaging"
-documentation = "https://docs.rs/agentropic-messaging"
+repository = "https://github.com/zeroicai/z-messaging"
+documentation = "https://docs.rs/z-messaging"
 keywords = ["agents", "messaging", "acl", "communication"]
 categories = ["concurrency", "network-programming"]
 readme = "README.md"
 
 [dependencies]
-agentropic-core = { git = "https://github.com/agentropic/agentropic-core", branch = "main" }
+z-core = { git = "https://github.com/zeroicai/z-core", branch = "main" }
 
 async-trait = "0.1"
 tokio = { version = "1.0", features = ["full", "sync"] }
