@@ -7,5 +7,5 @@ pub use crate::message::{Message, MessageId};
 pub use crate::performative::Performative;
 pub use crate::router::Router;
 
-// Re-export from core
-pub use z_core::prelude::*;
+// Re-export from agent-core
+pub use agent_core::prelude::*;
