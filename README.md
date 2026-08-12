@@ -1,12 +1,12 @@
-﻿# z-messaging
+﻿# messaging
 
-[![Crates.io](https://img.shields.io/crates/v/z-messaging.svg)](https://crates.io/crates/z-messaging)
-[![Documentation](https://docs.rs/z-messaging/badge.svg)](https://docs.rs/z-messaging)
+[![Crates.io](https://img.shields.io/crates/v/messaging.svg)](https://crates.io/crates/messaging)
+[![Documentation](https://docs.rs/messaging/badge.svg)](https://docs.rs/messaging)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE)
 
 **Communication protocols, message routing, and Agent Communication Language (ACL) for multi-agent systems.**
 
-`z-messaging` provides the infrastructure for agents to communicate, coordinate, and collaborate. It implements message passing semantics, routing mechanisms, and standardized communication protocols based on FIPA ACL standards.
+`messaging` provides the infrastructure for agents to communicate, coordinate, and collaborate. It implements message passing semantics, routing mechanisms, and standardized communication protocols based on FIPA ACL standards.
 
 ---
 
@@ -51,7 +51,7 @@ All components have:
 
 Messages are the fundamental unit of agent communication:
 ```rust
-use z_messaging::prelude::*;
+use messaging::prelude::*;
 
 // Create a message
 let message = Message::new(
@@ -73,7 +73,7 @@ Each message has:
 
 Based on FIPA ACL and speech act theory:
 ```rust
-use z_messaging::Performative;
+use messaging::Performative;
 
 // Available performatives:
 Performative::Inform        // Share information
@@ -94,7 +94,7 @@ Performative::Agree         // Commit to action
 
 The router delivers messages between agents:
 ```rust
-use z_messaging::prelude::*;
+use messaging::prelude::*;
 
 // Create router
 let mut router = Router::new();
@@ -116,7 +116,7 @@ if router.has_routed(&message_id) {
 
 Each agent has a mailbox for receiving messages:
 ```rust
-use z_messaging::prelude::*;
+use messaging::prelude::*;
 
 // Create mailbox
 let mut mailbox = Mailbox::new();
@@ -137,7 +137,7 @@ println!("Messages: {}", mailbox.size());
 
 Synchronous request-response pattern:
 ```rust
-use z_messaging::protocols::prelude::*;
+use messaging::protocols::prelude::*;
 
 // Create request-reply protocol
 let protocol = RequestReply::new(requester_id, responder_id);
@@ -204,14 +204,14 @@ Based on Foundation for Intelligent Physical Agents standards:
 Add to your `Cargo.toml`:
 ```toml
 [dependencies]
-z-messaging = "0.1.0"
-z-core = "0.1.0"
+messaging = "0.1.0"
+agent-core = "0.1.0"
 tokio = { version = "1.0", features = ["full"] }
 ```
 
 ### Basic Message Passing
 ```rust
-use z_messaging::prelude::*;
+use messaging::prelude::*;
 
 #[tokio::main]
 async fn main() -> Result<(), MessagingError> {
@@ -246,7 +246,7 @@ async fn main() -> Result<(), MessagingError> {
 
 ### Using the Router
 ```rust
-use z_messaging::prelude::*;
+use messaging::prelude::*;
 
 #[tokio::main]
 async fn main() -> Result<(), MessagingError> {
@@ -284,8 +284,8 @@ async fn main() -> Result<(), MessagingError> {
 
 ### Request-Reply Pattern
 ```rust
-use z_messaging::prelude::*;
-use z_messaging::protocols::prelude::*;
+use messaging::prelude::*;
+use messaging::protocols::prelude::*;
 
 #[tokio::main]
 async fn main() -> Result<(), MessagingError> {
@@ -330,7 +330,7 @@ async fn main() -> Result<(), MessagingError> {
 
 ### Different Performatives
 ```rust
-use z_messaging::prelude::*;
+use messaging::prelude::*;
 
 fn main() {
     let sender = AgentId::new();
@@ -457,18 +457,18 @@ cargo run --example request_reply
 
 ## Related Crates
 
-- **[z-core](../z-core)** - Agent primitives and AgentId
-- **[z-cognition](../z-cognition)** - BDI reasoning and planning
-- **[z-patterns](../z-patterns)** - Multi-agent coordination patterns
-- **[z-runtime](../z-runtime)** - Agent execution engine
+- **[agent-core](../agent-core)** - Agent primitives and AgentId
+- **[cognition](../cognition)** - BDI reasoning and planning
+- **[patterns](../patterns)** - Multi-agent coordination patterns
+- **[runtime](../runtime)** - Agent execution engine
 
 ---
 
 ## Documentation
 
-Full API documentation is available on [docs.rs](https://docs.rs/z-messaging).
+Full API documentation is available on [docs.rs](https://docs.rs/messaging).
 
-For guides and tutorials, see the [ZeroicAI documentation](https://github.com/zeroicai/z-docs).
+For guides and tutorials, see the [RustyAI documentation](https://github.com/rustyai/docs).
 
 ---
 
@@ -512,4 +512,4 @@ at your option.
 
 ---
 
-*Part of the [ZeroicAI](https://github.com/zeroicai) ecosystem for agent-oriented programming in Rust.*
+*Part of the [RustyAI](https://github.com/rustyai) ecosystem for agent-oriented programming in Rust.*

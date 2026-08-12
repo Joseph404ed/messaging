@@ -1,4 +1,4 @@
-use z_messaging::prelude::*;
+use messaging::prelude::*;
 
 #[test]
 fn create_message() {
